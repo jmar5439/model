@@ -23,7 +23,6 @@ import {
   getWorkspace
 } from '@schematics/angular/utility/workspace';
 import { parseName } from '@schematics/angular/utility/parse-name';
-import { applyLintFix } from '@schematics/angular/utility/lint-fix';
 import { InsertChange } from '@schematics/angular/utility/change';
 import { buildRelativePath } from '@schematics/angular/utility/find-module';
 import { addProviderToModule } from '@schematics/angular/utility/ast-utils';
@@ -62,7 +61,7 @@ export default function (options: ModelServiceOptions): any {
           mergeWith(templateSource, MergeStrategy.Default)
         ])
       ),
-      options.lintFix ? applyLintFix(options.path) : noop()
+      noop()
     ]);
   };
 }
@@ -117,3 +116,5 @@ function readIntoSourceFile(host: Tree, modulePath: string): ts.SourceFile {
     true
   );
 }
+
+
