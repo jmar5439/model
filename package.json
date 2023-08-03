@@ -1,5 +1,5 @@
 {
-  "name": "@angular-extensions/model",
+  "name": "angular-extensions-model-angular-13",
   "version": "13.0.0",
   "description": "Angular Model - Simple state management with minimalistic API, one way data flow, multiple model support and immutable data exposed as RxJS Observable.",
   "main": "lib/model/model.ts",
