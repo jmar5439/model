@@ -1,4 +1,5 @@
-import * as ts from 'typescript';
+import * as ts from '@schematics/angular/third_party/github.com/Microsoft/TypeScript/lib/typescript';
+
 
 import {
   apply,

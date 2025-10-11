@@ -12,7 +12,7 @@
     "release": "npm run test && standard-version && git push --follow-tags origin master && npm run build && npm publish ./dist --access public",
     "format:write": "prettier **/*.{ts,json,md} --write",
     "format:test": "prettier **/*.{ts,json,md} --list-different",
-    "lib:build": "ng-packagr -p package.json",
+    "lib:build": "ng-packagr -p ng-package.json",
     "lib:test": "mocha lib/model/model.test.ts --require ts-node/register",
     "lib:watch": "npm run lib:test -- --watch-extensions ts --watch",
     "schm:build": "tsc -p tsconfig.schematics.json && cpx schematics/**/{collection.json,schema.json,files/**} dist/schematics",
