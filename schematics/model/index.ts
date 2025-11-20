@@ -1,6 +1,5 @@
 import * as ts from '@schematics/angular/third_party/github.com/Microsoft/TypeScript/lib/typescript';
 
-
 import {
   apply,
   branchAndMerge,
@@ -11,7 +10,6 @@ import {
   move,
   noop,
   Rule,
-  SchematicContext,
   SchematicsException,
   template,
   Tree,
@@ -30,8 +28,8 @@ import { addProviderToModule } from '@schematics/angular/utility/ast-utils';
 
 import { Schema as ModelServiceOptions } from './schema';
 
-export default function (options: ModelServiceOptions): any {
-  return async (host: Tree, _context: SchematicContext) => {
+export default function (options: ModelServiceOptions): Rule {
+  return async (host: Tree) => {
     const workspace = await getWorkspace(host);
     const projectName =
       options.project || workspace.projects.keys().next().value;
@@ -117,5 +115,3 @@ function readIntoSourceFile(host: Tree, modulePath: string): ts.SourceFile {
     true
   );
 }
-
-

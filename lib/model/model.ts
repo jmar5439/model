@@ -8,7 +8,7 @@ export class Model<T> {
   data$: Observable<T>;
 
   constructor(
-    initialData: any,
+    initialData: T,
     private immutable: boolean,
     sharedSubscription: boolean,
     private clone?: (data: T) => T

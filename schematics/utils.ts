@@ -32,10 +32,10 @@ export function addPackageToPackageJson(
   return host;
 }
 
-function sortObjectByKeys(obj: any) {
+function sortObjectByKeys(obj: Record<string, string>): Record<string, string> {
   return Object.keys(obj)
     .sort()
-    .reduce((result: any, key) => {
+    .reduce((result: Record<string, string>, key) => {
       result[key] = obj[key];
       return result;
     }, {});

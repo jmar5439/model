@@ -4,9 +4,9 @@ This is an updated version of @angular-extensions/model for Angular 17.
 
 by [@jmar5439](https://www.linkedin.com/in/jordi-marti-carreras-13949323/)
 
-Based on 
+Based on
 
--------------------------------------------------------------------------------------
+---
 
 by [@tomastrajan](https://twitter.com/tomastrajan)
 

@@ -171,7 +171,7 @@ describe('Schematic: Model', () => {
     const content = tree.readContent(
       '/projects/bar/src/app/foo/foo.service.ts'
     );
-    assert(/interface Foo {\n  prop: string;\n}/.test(content));
+    assert(/interface Foo {\n {2}prop: string;\n}/.test(content));
   });
 
   it('should create model collection with items flag', async () => {

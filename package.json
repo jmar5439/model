@@ -5,8 +5,8 @@
   "main": "lib/model/model.ts",
   "scripts": {
     "clean": "rm -rf dist coverage .nyc_output .ng_pkg_build && rm -f dist.tgz",
-    "lint": "tslint '{lib,schematics}/**/*.ts' -e '**/files/**'",
-    "test": "npm run lint && npm run format:test && nyc mocha '{lib,schematics}/**/*.test.ts' --require ts-node/register --require source-map-support/register",
+    "lint": "eslint '{lib,schematics}/**/*.ts' --ignore-pattern '**/files/**'",
+ "test": "npm run lint && npm run format:test && nyc mocha 'lib/**/*.test.ts' 'schematics/**/*.test.ts'",
     "build": "npm run clean && npm run lib:build && npm run schm:build",
     "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
     "release": "npm run test && standard-version && git push --follow-tags origin master && npm run build && npm publish ./dist --access public",
@@ -20,8 +20,14 @@
     "schm:watch": "npm run schm:test -- --watch-extensions ts --watch"
   },
   "nyc": {
-    "extension": [".ts"],
-    "reporter": ["json","html","text-summary"]
+    "extension": [
+      ".ts"
+    ],
+    "reporter": [
+      "json",
+      "html",
+      "text-summary"
+    ]
   },
   "ngPackage": {
     "lib": {
@@ -52,7 +58,7 @@
     "@types/sinon": "^10.0.20",
     "cpx": "^1.5.0",
     "mocha": "^10.8.2",
-    "ng-packagr": "^14.2.2",
+    "ng-packagr": "^17.0.0",
     "nyc": "^15.1.0",
     "prettier": "^3.0.0",
     "rxjs": "~7.8",
@@ -60,9 +66,11 @@
     "source-map-support": "^0.5.20",
     "standard-version": "^9.3.1",
     "ts-node": "^10.9.2",
-    "tslint": "^6.1.3",
-    "typescript": "~5.4",
-    "zone.js": "^0.14.0"
+     "typescript": "~5.4",
+    "zone.js": "^0.14.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "eslint": "^8.0.0"
   },
   "keywords": [
     "angular",
@@ -84,5 +92,6 @@
   },
   "bugs": {
     "url": "https://github.com/jmar5439/angular-extensions/model/issues"
-  }
+  },
+  "type": "commonjs"
 }
