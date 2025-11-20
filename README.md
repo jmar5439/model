@@ -1,6 +1,6 @@
 # Angular Model - @angular-extensions/model
 
-This is an updated version of @angular-extensions/model for Angular 14.
+This is an updated version of @angular-extensions/model for Angular 17.
 
 by [@jmar5439](https://www.linkedin.com/in/jordi-marti-carreras-13949323/)
 
